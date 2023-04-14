@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server",
-    "cy:run": "cypress run --browser chrome",
-    "test": "start-server-and-test start http://localhost:8080 cy:run"
+    "cy:run": "cypress run --headless --browser electron",
+    "test": "start-server-and-test start http://localhost:8080 cy:run",
+    "test-docker": "docker build -t cpw2-dom . && docker run -it -v $PWD:/app -w /app cpw2-dom"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,7 @@
   },
   "homepage": "https://github.com/rpmhub/cpw2-dom#readme",
   "devDependencies": {
-    "cypress": "^9.5.3",
+    "cypress": "^12.9.0",
     "start-server-and-test": "^1.14.0"
   },
   "dependencies": {
