@@ -2,7 +2,7 @@
  * Aplica a cor #BECCC3 no background do body da página
  */
 function background(){
-
+    document.body.style.backgroundColor = "#BECCC3";
     /**
      * Tarefa/Issue  1
      *
@@ -17,9 +17,12 @@ function background(){
  * e apresente o nome e o sobrenome de uma pessoa (separado por um espaço)
  * na div id='result'
  */
-function show(){
-
-     /**
+function show(){ //fname lname
+    var nome = document.getElementById("fname");
+    var sobrenome = document.getElementById("lname");
+    var nomeCompleto = document.getElementById("name");
+    nomeCompleto.value = nome.value + " " + sobrenome.value;
+    /**
       * Issue  2
       *
       * Recupera os valores dos campos de texto cujo o id='fname' e id='lname' e apresente o nome
