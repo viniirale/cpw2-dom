@@ -35,9 +35,18 @@ function show(){ //fname lname
  * digitados no campo de texto id='name'
  */
 function search(){
+    var nomeCompleto = document.getElementById("name");
+    var nomes = document.getElementById("search");
+    nomes.innerHTML = "";
+
 
     var data = [{name: "Rodrigo"}, {name: "Ricardo"}, {name: "Fabio"}, {name: "Alex"}, {name: "Sílvia"}];
-
+   
+    for(var I=0;I<data.length;I++){
+        if(data[I].name.toLowerCase().includes(nomeCompleto.value.toLowerCase())){
+            nomes.innerHTML += data[I].name + "<br>";
+        }
+    }
     /**
      * Issue 3
      *
